@@ -49,7 +49,7 @@
           data-cy="google-login-button"
           @click="handleGoogleLogin"
         >
-          <img src="@/assets/images/logo_google_oauth2.png" alt="Google logo" class="google-logo" />
+          <img src="@/assets/images/svg/google-color-icon.svg" alt="Google logo" class="google-logo" />
           {{ $t('login.google-signin') }}
         </u-button>
       </div>

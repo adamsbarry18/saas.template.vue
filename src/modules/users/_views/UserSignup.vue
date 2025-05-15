@@ -1,13 +1,13 @@
 <template>
   <div class="user-signup-page-wrapper">
     <div class="signup-hero-banner">
-      <img src="@/assets/images/e-commerce-hero.jpg" alt="E-commerce Signup" class="hero-image" />
+      <img src="@/assets/images/stock_app_hero.jpg" alt="StockMaster Signup" class="hero-image" />
     </div>
     <div class="signup-content-wrapper">
       <u-card class="signup-form-card">
         <template #title>
           <div class="card-header-logo-centered">
-            <img src="@/assets/images/logo_ecommerce.jpg" alt="Logo" class="company-logo-signup-centered" />
+            <img src="@/assets/images/" alt="Logo" class="company-logo-signup-centered" />
             <h1 class="signup-main-title">{{ $t('user.signup.title') }}</h1>
           </div>
         </template>
@@ -41,7 +41,11 @@
             data-cy="google-signup-button"
             @click="handleGoogleSignup"
           >
-            <img src="@/assets/images/logo_google_oauth2.png" alt="Google logo" class="google-logo-signup" />
+            <img
+              src="@/assets/images/svg/google-color-icon.svg"
+              alt="Google logo"
+              class="google-logo-signup"
+            />
             {{ $t('user.signup.google-signup') }}
           </u-button>
         </div>

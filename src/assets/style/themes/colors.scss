@@ -210,20 +210,6 @@ body {
   --color-dataviz-5: var(--color-alternative-3-400);
   --color-dataviz-6: var(--color-purple-300);
 
-  // Echarts graphs color legacy palette
-  // Note: echarts officially only supports 'rgb', 'rgba' and 'hex' https://echarts.apache.org/en/option.html#color
-  --color-legacy-dataviz-1: var(--color-red-300);
-  --color-legacy-dataviz-2: var(--color-yellow-200);
-  --color-legacy-dataviz-3: var(--color-green-200);
-  --color-legacy-dataviz-4: var(--color-orange-200);
-  --color-legacy-dataviz-5: var(--color-red-400);
-  --color-legacy-dataviz-6: var(--color-blue-300);
-  --color-legacy-dataviz-7: var(--color-purple-300);
-  --color-legacy-dataviz-8: var(--color-green-200);
-  --color-legacy-dataviz-9: var(--color-alternative-3-200);
-  --color-legacy-dataviz-10: var(--color-blue-200);
-  --color-legacy-dataviz-11: var(--color-alternative-4-200);
-
   // box-shadow
   --box-shadow-s: 0px 1px 6px 1px rgba(0, 0, 0, 0.08);
   --box-shadow-m:

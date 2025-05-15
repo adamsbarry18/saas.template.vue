@@ -5,7 +5,7 @@
         <template #title>
           <div class="header-ucard-slot">
             <div class="logo-wrapper">
-              <img class="header-logo" src="@/assets/images/logo_ecommerce.jpg" />
+              <img class="header-logo" src="@/assets/images/logo_stock_app.png" />
             </div>
           </div>
         </template>
@@ -15,7 +15,7 @@
       </u-card>
     </transition>
     <div class="home-logo">
-      <img src="@/assets/images/e-commerce-hero.jpg" alt="E-commerce" />
+      <img src="@/assets/images/stock_app_hero.jpg" alt="E-commerce" />
     </div>
   </div>
 </template>

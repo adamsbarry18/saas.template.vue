@@ -8,7 +8,7 @@
     >
       <template #logo>
         <router-link to="/">
-          <img src="@/assets/images/logo_ecommerce.jpg" alt="logo" />
+          <img src="@/assets/images/logo_stock_app.png" alt="logo" />
           <span>StockMaster</span>
         </router-link>
       </template>

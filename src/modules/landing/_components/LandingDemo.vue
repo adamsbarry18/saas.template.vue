@@ -2,7 +2,7 @@
   <section class="demo-section">
     <div class="container">
       <div class="illustration">
-        <img src="@/assets/images/try-app-view.jpg" alt="Dashboard StockMaster" />
+        <img src="@/assets/images/try_app_view.jpg" alt="Dashboard StockMaster" />
       </div>
       <div class="content">
         <h2 class="section-title">Essayez StockMaster gratuitement</h2>
@@ -28,7 +28,7 @@
 <style lang="scss" scoped>
   .demo-section {
     padding: 60px 20px;
-    background-color: var(--color-neutral-50);
+    background-color: var(--color-neutral-100);
     overflow: hidden;
 
     @media (min-width: 640px) {
