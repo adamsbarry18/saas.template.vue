@@ -34,14 +34,15 @@
       <div class="actions-container">
         <template v-for="item in rightItems" :key="item.id">
           <template v-if="!item.hidden">
-            <div
+            <u-button
+              type="primary"
               v-if="item.type === 'button'"
               :class="['action-item', `action-${item.id}`]"
               @click="handleActionClick(item.action)"
             >
               <icon-base v-if="item.icon" :icon="item.icon" class="action-icon" />
               <span v-if="item.label" class="action-label">{{ item.label }}</span>
-            </div>
+            </u-button>
             <u-search-bar
               v-else-if="item.type === 'search'"
               v-bind="item.props"
@@ -304,12 +305,7 @@
           display: flex;
           align-items: center;
           cursor: pointer;
-          color: var(--el-text-color-regular);
           transition: color 0.2s ease-in-out;
-
-          &:hover {
-            color: var(--color-primary-500);
-          }
 
           .action-icon {
             margin-right: 4px;

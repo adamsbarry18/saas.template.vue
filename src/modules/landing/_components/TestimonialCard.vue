@@ -44,17 +44,18 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    box-shadow: var(--box-shadow-s);
 
     &:hover {
-      transform: scale(1.03);
-      box-shadow: var(--el-box-shadow, 0 2px 12px 0 rgba(0, 0, 0, 0.1));
+      transform: translateY(-5px);
+      box-shadow: var(--box-shadow-xl);
     }
 
     .rating-container {
       margin-bottom: 1rem;
       .testimonial-stars {
         :deep(.el-rate__icon) {
-          // color: var(--color-yellow-400);
+          color: var(--color-yellow-400);
         }
       }
     }

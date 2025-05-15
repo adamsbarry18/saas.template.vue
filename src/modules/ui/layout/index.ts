@@ -8,6 +8,7 @@ import USectionsWithMenu from '@/modules/ui/layout/USectionsWithMenu.vue';
 import UPill from './UPill.vue';
 import UIndexedSection from './UIndexedSection.vue';
 import ULandingHeader from './UNavBar.vue';
+import UNavBar from './UNavBar.vue';
 
 export {
   UCard,
@@ -20,4 +21,5 @@ export {
   UPill,
   UIndexedSection,
   ULandingHeader,
+  UNavBar,
 };

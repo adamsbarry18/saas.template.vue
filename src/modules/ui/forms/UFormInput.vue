@@ -142,7 +142,7 @@
       type: String,
       default: 'string',
       validator: (v: string) =>
-        ['string', 'textarea', 'number', 'date', 'enum', 'radio', 'password'].includes(v),
+        ['string', 'textarea', 'number', 'date', 'enum', 'radio', 'password', 'email'].includes(v),
     },
     radioOptions: { type: Array as PropType<any[]>, default: () => [] },
     enumOptions: { type: Array as PropType<any[]>, default: () => [] },

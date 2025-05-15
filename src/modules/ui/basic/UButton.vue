@@ -177,6 +177,13 @@
       font-size: var(--caption);
     }
 
+    &.-large {
+      padding: 0px 30px;
+      min-width: 100px;
+      min-height: 45px;
+      font-size: var(--paragraph-01);
+    }
+
     &.-full {
       width: 100%;
     }

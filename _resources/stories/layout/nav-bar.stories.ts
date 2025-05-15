@@ -232,7 +232,7 @@ export const TopBarWithCustomLogo = () => ({
         >
           <template #logo>
             <div style="display: flex; align-items: center;">
-              <img src="../../../src/assets/images/ecommerce_retail.jpg" alt="Custom Logo" style="height: 40px; margin-right: 10px;" />
+              <img src="../../../src/assets/images/logo_stock_app.png" alt="Custom Logo" style="height: 40px; margin-right: 10px;" />
               <span style="font-weight: bold; color: #303133;">Mon E-Shop</span>
             </div>
           </template>

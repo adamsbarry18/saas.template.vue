@@ -1,19 +1,19 @@
-import LandingHeroSection from './LandingHeroSection.vue';
-import LandingFeaturesSection from './LandingFeaturesSection.vue';
-import ProductCard from './ProductCard.vue';
-import LandingFeaturedProducts from './LandingFeaturedProducts.vue';
-import TestimonialCard from './TestimonialCard.vue';
-import LandingTestimonialsSection from './LandingTestimonialsSection.vue';
-import LandingNewsletterSection from './LandingNewsletterSection.vue';
+import LandingHero from './LandingHero.vue';
+import LandingFeatures from './LandingFeatures.vue';
+import LandingDemo from './LandingDemo.vue';
+import LandingPricing from './LandingPricing.vue';
+import LandingTestimonials from './LandingTestimonials.vue';
+import LandingCta from './LandingCta.vue';
 import LandingFooter from './LandingFooter.vue';
+import TestimonialCard from './TestimonialCard.vue';
 
 export {
-  LandingHeroSection,
-  LandingFeaturesSection,
-  ProductCard,
-  LandingFeaturedProducts,
-  TestimonialCard,
-  LandingTestimonialsSection,
-  LandingNewsletterSection,
+  LandingHero,
+  LandingFeatures,
+  LandingDemo,
+  LandingPricing,
+  LandingTestimonials,
+  LandingCta,
   LandingFooter,
+  TestimonialCard,
 };
