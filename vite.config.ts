@@ -11,7 +11,15 @@ dns.setDefaultResultOrder('verbatim');
 export default defineConfig(({ mode }) => {
   const isDevBuild = mode === 'development';
   return {
-    plugins: [vue()],
+    plugins: [
+      vue({
+        template: {
+          compilerOptions: {
+            isCustomElement: (tag) => tag === 'lottie-player',
+          },
+        },
+      }),
+    ],
     resolve: {
       dedupe: ['@storybook/client-api'],
       alias: {
@@ -73,6 +81,9 @@ export default defineConfig(({ mode }) => {
         provider: 'istanbul',
         reporter: ['text', 'cobertura', 'html', 'lcovonly'],
       },
+    },
+    optimizeDeps: {
+      include: ['lottie-player'],
     },
   };
 });

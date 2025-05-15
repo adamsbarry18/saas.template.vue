@@ -5,45 +5,44 @@
         <!-- Section Logo et Description -->
         <div class="footer-section about-us">
           <div class="logo-container">
-            <icon-base icon="icon-store" :size="30" color="var(--color-primary-400)" />
-            <span class="logo-text">ShopEase</span>
+            <icon-base icon="icon-ware-house" :size="30" color="var(--color-primary-400)" />
+            <span class="logo-text">StockMaster</span>
           </div>
           <p class="description">
-            Votre boutique en ligne préférée pour des produits de qualité à des prix imbattables.
+            La solution tout-en-un pour optimiser vos achats, ventes, stocks et finances.
           </p>
           <div class="social-icons">
-            <a href="#" aria-label="Facebook"><icon-base icon="icon-facebook" size="20" /></a>
-            <a href="#" aria-label="Twitter" style="position: relative; top: 5px"
-              ><icon-base icon="icon-twitter" size="23"
+            <a href="#" aria-label="Facebook"
+              ><icon-base icon="icon-facebook" size="20" color="var(--color-neutral-400)"
             /></a>
-            <a href="#" aria-label="Instagram" style="position: relative; top: 5px"
-              ><icon-base icon="icon-instagram" size="23"
+            <a href="#" aria-label="Twitter"
+              ><icon-base icon="icon-twitter" size="20" color="var(--color-neutral-400)"
             /></a>
-            <a href="#" aria-label="Pinterest"><icon-base icon="icon-pinterest" size="20" /></a>
+            <a href="#" aria-label="LinkedIn"
+              ><icon-base icon="icon-linkedin" size="20" color="var(--color-neutral-400)"
+            /></a>
           </div>
         </div>
 
-        <!-- Section Boutique -->
+        <!-- Section Solutions -->
         <div class="footer-section links-section">
-          <h3 class="section-title">Boutique</h3>
+          <h3 class="section-title">Solutions</h3>
           <ul>
-            <li><a href="#">Tous les produits</a></li>
-            <li><a href="#">Nouveautés</a></li>
-            <li><a href="#">Meilleures ventes</a></li>
-            <li><a href="#">Offres spéciales</a></li>
-            <li><a href="#">Accessoires</a></li>
+            <li><a href="#">Gestion de stock</a></li>
+            <li><a href="#">Achats & Ventes</a></li>
+            <li><a href="#">Multi-entrepôts</a></li>
+            <li><a href="#">Comptabilité</a></li>
           </ul>
         </div>
 
-        <!-- Section Informations -->
+        <!-- Section Support -->
         <div class="footer-section links-section">
-          <h3 class="section-title">Informations</h3>
+          <h3 class="section-title">Support</h3>
           <ul>
-            <li><a href="#">À propos de nous</a></li>
-            <li><a href="#">Livraison</a></li>
-            <li><a href="#">Politique de retour</a></li>
-            <li><a href="#">Conditions générales</a></li>
-            <li><a href="#">Confidentialité</a></li>
+            <li><a href="#pricing">Prix</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
 
@@ -52,25 +51,25 @@
           <h3 class="section-title">Contact</h3>
           <ul>
             <li class="contact-item">
-              <icon-base icon="icon-pin" size="18" class="contact-icon" />
+              <icon-base icon="icon-pin" :size="18" class="contact-icon" color="var(--color-primary-400)" />
               <span>123 Rue du Commerce, 75001 Paris, France</span>
             </li>
             <li class="contact-item">
-              <icon-base icon="icon-phone" size="18" class="contact-icon" />
+              <icon-base icon="icon-tel" :size="18" class="contact-icon" color="var(--color-primary-400)" />
               <span>+33 1 23 45 67 89</span>
             </li>
             <li class="contact-item">
-              <icon-base icon="icon-email" size="18" class="contact-icon" />
-              <span>contact@shopease.com</span>
+              <icon-base icon="icon-email" :size="18" class="contact-icon" color="var(--color-primary-400)" />
+              <span>contact@stockmaster.com</span>
             </li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p class="copyright">© {{ currentYear }} ShopEase. Tous droits réservés.</p>
+        <p class="copyright">© {{ currentYear }} StockMaster. Tous droits réservés.</p>
         <div class="payment-icons">
-          <!-- Les images de paiement peuvent être des SVGs ou des composants IconBase si disponibles -->
+          <!-- Placeholder images for payment icons -->
           <img src="https://via.placeholder.com/40x25/ffffff/000000?text=Visa" alt="Visa" />
           <img src="https://via.placeholder.com/40x25/ffffff/000000?text=MC" alt="Mastercard" />
           <img src="https://via.placeholder.com/40x25/ffffff/000000?text=PayPal" alt="PayPal" />
@@ -90,132 +89,135 @@
 
 <style lang="scss" scoped>
   .landing-footer {
-    background-color: var(--color-grey-900);
-    color: var(--color-grey-400);
+    background-color: var(--color-neutral-800);
+    color: var(--color-neutral-400);
     padding: 40px 20px 20px;
+  }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
+  .landing-footer .container {
+    max-width: 1280px; // Adjusted max-width
+    margin: 0 auto;
+  }
+
+  .landing-footer .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px; // gap-8
+
+    @media (min-width: 768px) {
+      // md
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 1024px) {
+      // lg
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .landing-footer .footer-section {
+    .section-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: 1rem;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 2rem;
-      margin-bottom: 3rem;
-
-      @media (min-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      @media (min-width: 1024px) {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-
-    .footer-section {
-      .section-title {
-        font-size: 1.125rem;
-        font-weight: 700;
-        color: var(--color-white, #ffffff);
-        margin-bottom: 1rem;
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-
-        li a {
-          color: var(--color-grey-400, #b3b3b3);
-          text-decoration: none;
-          &:hover {
-            color: var(--color-white, #ffffff);
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-
-    .about-us {
-      .logo-container {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-bottom: 1rem;
-
-        .logo-text {
-          font-size: 1.25rem;
-          font-weight: bold;
-          color: var(--color-white, #ffffff);
-        }
-      }
-      .description {
-        margin-bottom: 1rem;
-        line-height: 1.6;
-      }
-      .social-icons {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        a {
-          color: var(--color-grey-400);
-          &:hover {
-            color: var(--color-whitef);
-          }
-        }
-      }
-    }
-
-    .contact-section {
-      ul {
-        gap: 0.75rem;
-      }
-      .contact-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.75rem;
-        .contact-icon {
-          margin-top: 3px;
-          color: var(--color-primary-400);
-          flex-shrink: 0;
-        }
-        span {
-          line-height: 1.6;
-        }
-      }
-    }
-
-    .footer-bottom {
-      border-top: 1px solid var(--color-grey-800);
-      padding-top: 2rem;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       display: flex;
       flex-direction: column;
+      gap: 8px; // gap-2
+
+      li a {
+        color: var(--color-neutral-400);
+        text-decoration: none;
+        &:hover {
+          color: var(--color-white);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .landing-footer .about-us {
+    .logo-container {
+      display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 8px; // gap-2
+      margin-bottom: 1rem;
+
+      .logo-text {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: var(--color-white);
+      }
+    }
+    .description {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 16px; // gap-4
+      a {
+        color: var(--color-neutral-400);
+        &:hover {
+          color: var(--color-white);
+        }
+      }
+    }
+  }
+
+  .landing-footer .contact-section {
+    ul {
+      gap: 12px; // gap-3
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px; // gap-3
+      .contact-icon {
+        margin-top: 3px;
+        color: var(--color-primary-400);
+        flex-shrink: 0;
+      }
+      span {
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .landing-footer .footer-bottom {
+    border-top: 1px solid var(--color-neutral-800);
+    padding-top: 32px; // pt-8
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; // gap-4
+    @media (min-width: 768px) {
+      // md
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .copyright {
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
       @media (min-width: 768px) {
-        flex-direction: row;
-        justify-content: space-between;
+        // md
+        margin-bottom: 0;
       }
+    }
 
-      .copyright {
-        margin-bottom: 1rem;
-        font-size: 0.875rem;
-        @media (min-width: 768px) {
-          margin-bottom: 0;
-        }
-      }
-
-      .payment-icons {
-        display: flex;
-        gap: 1.5rem;
-        img {
-          height: 24px;
-          filter: grayscale(100%) contrast(0%) brightness(2);
-        }
+    .payment-icons {
+      display: flex;
+      gap: 24px; // gap-6
+      img {
+        height: 24px;
+        filter: grayscale(100%) contrast(0%) brightness(2);
       }
     }
   }
