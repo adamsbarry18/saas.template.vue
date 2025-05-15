@@ -307,10 +307,6 @@
           cursor: pointer;
           transition: color 0.2s ease-in-out;
 
-          &:hover {
-            color: var(--color-primary-500);
-          }
-
           .action-icon {
             margin-right: 4px;
             width: 20px;
