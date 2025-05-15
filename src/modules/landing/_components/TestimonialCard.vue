@@ -44,17 +44,16 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    box-shadow: var(--box-shadow-s); // Using project's shadow variable
+    box-shadow: var(--box-shadow-s);
 
     &:hover {
-      transform: translateY(-5px); // Adjusted transform
-      box-shadow: var(--box-shadow-xl); // Using project's shadow variable
+      transform: translateY(-5px);
+      box-shadow: var(--box-shadow-xl);
     }
 
     .rating-container {
       margin-bottom: 1rem;
       .testimonial-stars {
-        // Specific styling for stars if needed, using deep selector if necessary
         :deep(.el-rate__icon) {
           color: var(--color-yellow-400);
         }

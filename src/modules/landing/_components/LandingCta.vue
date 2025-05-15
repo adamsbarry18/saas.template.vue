@@ -8,7 +8,7 @@
       <p class="section-description">
         Essayez gratuitement pendant 14 jours. Aucune carte de crédit requise.
       </p>
-      <u-button type="default" size="large" class="cta-button" @click="scrollToSection('demo')">
+      <u-button type="default" size="large" class="cta-button" @click="redirectToLogin">
         Démarrer l'essai gratuit
       </u-button>
     </div>
@@ -18,15 +18,12 @@
 <script setup lang="ts">
   import { UButton } from '@/modules/ui';
 
-  /**
-   * Scrolls to a specific section on the page.
-   * @param id The ID of the section to scroll to.
-   */
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  import { useRouter } from 'vue-router';
+
+  const router = useRouter();
+
+  const redirectToLogin = async () => {
+    await router.push({ name: 'login' });
   };
 </script>
 

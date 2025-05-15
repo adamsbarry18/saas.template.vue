@@ -10,76 +10,12 @@
       </div>
 
       <div class="features-grid">
-        <!-- Feature 1: Stock Management -->
-        <div class="feature-card">
+        <div v-for="feature in features" :key="feature.id" class="feature-card">
           <div class="feature-icon">
-            <icon-base icon="icon-ware-house" :size="24" color="var(--color-white)" />
+            <icon-base :icon="feature.icon" :size="24" color="var(--color-white)" />
           </div>
-          <h3 class="feature-title">Gestion des stocks</h3>
-          <p class="feature-description">
-            Suivez vos produits en temps réel, gérez les niveaux de stock et recevez des alertes pour les
-            réapprovisionnements.
-          </p>
-        </div>
-
-        <!-- Feature 2: Purchases & Sales -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <icon-base icon="icon-shopping" :size="24" color="var(--color-white)" />
-          </div>
-          <h3 class="feature-title">Achats & Ventes</h3>
-          <p class="feature-description">
-            Créez des bons de commande, factures et devis en quelques clics. Gérez vos fournisseurs et clients
-            efficacement.
-          </p>
-        </div>
-
-        <!-- Feature 3: Multi-currency -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <icon-base icon="icon-budget" :size="24" color="var(--color-white)" />
-          </div>
-          <h3 class="feature-title">Multi-devises</h3>
-          <p class="feature-description">
-            Travaillez avec différentes devises (USD, Euro, etc.) et bénéficiez de taux de change
-            automatiques.
-          </p>
-        </div>
-
-        <!-- Feature 4: Multi-warehouse -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <icon-base icon="icon-store" :size="24" color="var(--color-white)" />
-          </div>
-          <h3 class="feature-title">Multi-entrepôts</h3>
-          <p class="feature-description">
-            Gérez plusieurs entrepôts et boutiques, effectuez des transferts entre sites et optimisez votre
-            logistique.
-          </p>
-        </div>
-
-        <!-- Feature 5: Full History -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <icon-base icon="icon-history" :size="24" color="var(--color-white)" />
-          </div>
-          <h3 class="feature-title">Historique complet</h3>
-          <p class="feature-description">
-            Consultez l'historique de toutes vos opérations et générez des rapports détaillés pour une
-            meilleure analyse.
-          </p>
-        </div>
-
-        <!-- Feature 6: Data Security -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <icon-base icon="icon-locked" :size="24" color="var(--color-white)" />
-          </div>
-          <h3 class="feature-title">Sécurité des données</h3>
-          <p class="feature-description">
-            Vos données sont sécurisées avec chiffrement SSL, sauvegardes automatiques et contrôle d'accès
-            granulaire.
-          </p>
+          <h3 class="feature-title">{{ feature.title }}</h3>
+          <p class="feature-description">{{ feature.description }}</p>
         </div>
       </div>
     </div>
@@ -88,6 +24,17 @@
 
 <script setup lang="ts">
   import { IconBase } from '@/modules/ui';
+
+  interface Feature {
+    id: string;
+    icon: string;
+    title: string;
+    description: string;
+  }
+
+  defineProps<{
+    features: Feature[];
+  }>();
 </script>
 
 <style lang="scss" scoped>

@@ -7,7 +7,7 @@
       <u-card class="signup-form-card">
         <template #title>
           <div class="card-header-logo-centered">
-            <img src="@/assets/images/" alt="Logo" class="company-logo-signup-centered" />
+            <img src="@/assets/images/logo_stock_app.png" alt="Logo" class="company-logo-signup-centered" />
             <h1 class="signup-main-title">{{ $t('user.signup.title') }}</h1>
           </div>
         </template>

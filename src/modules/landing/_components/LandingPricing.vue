@@ -7,143 +7,47 @@
           Choisissez le plan qui correspond à vos besoins. Évoluez à tout moment.
         </p>
         <div class="billing-toggle">
-          <u-toggle-button v-model="billingPeriod" :options="billingOptions" />
+          <u-toggle-button
+            :model-value="billingPeriod"
+            :options="billingOptions"
+            @update:model-value="$emit('update:billingPeriod', $event)"
+          />
         </div>
       </div>
 
       <div class="pricing-grid">
-        <!-- Basic Plan -->
         <u-card
+          v-for="plan in plans"
+          :key="plan.id"
           class="pricing-card"
+          :class="{ featured: plan.featured }"
           title-background-color="var(--color-primary-600)"
           title-color="var(--color-white)"
         >
           <template #title>
-            <span class="plan-title">Starter</span>
+            <span class="plan-title">{{ plan.title }}</span>
           </template>
           <div class="card-content">
-            <p class="plan-subtitle">Parfait pour les petites entreprises</p>
+            <p class="plan-subtitle">{{ plan.subtitle }}</p>
             <p class="plan-price">
-              <span class="price-value">€29</span>
-              <span class="price-period">/mois</span>
+              <span class="price-value">{{ plan.price[billingPeriod] }}</span>
+              <span v-if="plan.period" class="price-period">{{ plan.period[billingPeriod] }}</span>
             </p>
-            <u-button type="default" size="medium" class="plan-button" @click="scrollToSection('demo')">
-              Essai gratuit
+            <u-button
+              :type="plan.buttonType"
+              size="medium"
+              class="plan-button"
+              @click="scrollToSection(plan.buttonAction)"
+            >
+              {{ plan.buttonText }}
             </u-button>
           </div>
           <div class="card-features">
             <h3 class="features-title">Ce qui est inclus</h3>
             <ul class="features-list">
-              <li>
+              <li v-for="(feature, index) in plan.features" :key="index">
                 <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>Jusqu'à 1 000 produits</span>
-              </li>
-              <li>
-                <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>1 entrepôt</span>
-              </li>
-              <li>
-                <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>Gestion des achats et ventes</span>
-              </li>
-              <li>
-                <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>Support par email</span>
-              </li>
-            </ul>
-          </div>
-        </u-card>
-
-        <!-- Pro Plan -->
-        <u-card
-          class="pricing-card featured"
-          title-background-color="var(--color-primary-600)"
-          title-color="var(--color-white)"
-        >
-          <template #title>
-            <span class="plan-title">Professionnel</span>
-          </template>
-          <div class="card-content">
-            <p class="plan-subtitle">Pour les entreprises en croissance</p>
-            <p class="plan-price">
-              <span class="price-value">€79</span>
-              <span class="price-period">/mois</span>
-            </p>
-            <u-button type="primary" size="medium" class="plan-button" @click="scrollToSection('demo')">
-              Essai gratuit
-            </u-button>
-          </div>
-          <div class="card-features">
-            <h3 class="features-title">Ce qui est inclus</h3>
-            <ul class="features-list">
-              <li>
-                <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>Jusqu'à 10 000 produits</span>
-              </li>
-              <li>
-                <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>Jusqu'à 3 entrepôts</span>
-              </li>
-              <li>
-                <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>Multi-devises</span>
-              </li>
-              <li>
-                <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>Gestion des comptes bancaires</span>
-              </li>
-              <li>
-                <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>Support prioritaire</span>
-              </li>
-            </ul>
-          </div>
-        </u-card>
-
-        <!-- Enterprise Plan -->
-        <u-card
-          class="pricing-card"
-          title-background-color="var(--color-primary-600)"
-          title-color="var(--color-white)"
-        >
-          <template #title>
-            <span class="plan-title">Entreprise</span>
-          </template>
-          <div class="card-content">
-            <p class="plan-subtitle">Pour les grandes organisations</p>
-            <p class="plan-price">
-              <span class="price-value">Personnalisé</span>
-            </p>
-            <u-button type="default" size="medium" class="plan-button" @click="scrollToSection('contact')">
-              Nous contacter
-            </u-button>
-          </div>
-          <div class="card-features">
-            <h3 class="features-title">Ce qui est inclus</h3>
-            <ul class="features-list">
-              <li>
-                <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>Produits illimités</span>
-              </li>
-              <li>
-                <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>Entrepôts illimités</span>
-              </li>
-              <li>
-                <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>Multi-devises avancé</span>
-              </li>
-              <li>
-                <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>API et intégrations</span>
-              </li>
-              <li>
-                <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>Support dédié 24/7</span>
-              </li>
-              <li>
-                <icon-base icon="icon-success" :size="20" color="var(--color-green-500)" />
-                <span>Personnalisation avancée</span>
+                <span>{{ feature }}</span>
               </li>
             </ul>
           </div>
@@ -154,15 +58,37 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
   import { UButton, IconBase, UToggleButton, UCard } from '@/modules/ui';
 
-  const billingPeriod = ref('monthly'); // Default to monthly
+  export interface Plan {
+    id: string;
+    title: string;
+    subtitle: string;
+    price: {
+      [key in 'monthly' | 'annual']: string;
+    };
+    period?: {
+      [key in 'monthly' | 'annual']: string;
+    };
+    featured?: boolean;
+    buttonText: string;
+    buttonType: 'primary' | 'tertiary';
+    buttonAction: string;
+    features: string[];
+  }
 
-  const billingOptions = [
-    { label: 'Facturation mensuelle', value: 'monthly' },
-    { label: 'Facturation annuelle', value: 'annual' },
-  ];
+  export interface BillingOption {
+    label: string;
+    value: string;
+  }
+
+  defineProps<{
+    plans: Plan[];
+    billingPeriod: 'monthly' | 'annual';
+    billingOptions: BillingOption[];
+  }>();
+
+  defineEmits(['update:billingPeriod']);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);

@@ -11,7 +11,7 @@
           votre entreprise avec StockMaster.
         </p>
         <div class="actions">
-          <u-button type="primary" size="large" @click="scrollToSection('demo')"> Essai gratuit </u-button>
+          <u-button type="primary" size="large" @click="redirectToLogin"> Essai gratuit </u-button>
           <u-button type="default" size="large" @click="scrollToSection('features')">
             En savoir plus
           </u-button>
@@ -32,6 +32,13 @@
 
 <script setup lang="ts">
   import { UButton, ULottiePlayer } from '@/modules/ui';
+  import { useRouter } from 'vue-router';
+
+  const router = useRouter();
+
+  const redirectToLogin = async () => {
+    await router.push({ name: 'login' });
+  };
 
   /**
    * Scrolls to a specific section on the page.

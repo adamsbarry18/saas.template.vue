@@ -18,7 +18,6 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
   import TestimonialCard from './TestimonialCard.vue';
 
   interface TestimonialData {
@@ -30,35 +29,9 @@
     authorLocation: string;
   }
 
-  const testimonials = ref<TestimonialData[]>([
-    {
-      id: 't1',
-      rating: 5,
-      text: "StockMaster a révolutionné notre gestion d'inventaire. Nous avons réduit nos stocks excédentaires de 30% tout en améliorant notre disponibilité produit.",
-      authorImageUrl:
-        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&h=256&q=80',
-      authorName: 'Sarah K.',
-      authorLocation: 'Directrice, Boutique de Mode',
-    },
-    {
-      id: 't2',
-      rating: 5,
-      text: "La gestion multi-devises nous a permis d'étendre nos activités à l'international sans soucis de conversion. Un gain de temps considérable!",
-      authorImageUrl:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&h=256&q=80',
-      authorName: 'Jean L.',
-      authorLocation: "Gérant, Magasin d'Électronique",
-    },
-    {
-      id: 't3',
-      rating: 5,
-      text: "La gestion centralisée de nos 12 magasins est maintenant un jeu d'enfant. Les rapports automatisés nous font gagner des dizaines d'heures chaque mois.",
-      authorImageUrl:
-        'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&h=256&q=80',
-      authorName: 'Pierre M.',
-      authorLocation: 'PDG, Chaîne de Supermarchés',
-    },
-  ]);
+  defineProps<{
+    testimonials: TestimonialData[];
+  }>();
 </script>
 
 <style lang="scss" scoped>
